@@ -28,8 +28,13 @@
     <!-- Header -->
     <header class="site-header">
         <div class="container">
-            <a class="logo" href="index.html" data-i18n="logo">Nour Beyond Packaging</a>
-            <div class="header-right">
+            <a class="logo" href="index.html">Nour Beyond Packaging</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <div class="header-right" id="headerRight">
                 <nav class="nav-links">
                     <a href="#about" data-i18n="nav.about">About</a>
                     <a href="#services" data-i18n="nav.services">Services</a>
@@ -46,6 +51,7 @@
             </div>
         </div>
     </header>
+    <div class="menu-overlay" id="menuOverlay"></div>
 
     <!-- Main Content -->
     <main>
@@ -322,7 +328,7 @@
     <footer class="site-footer">
         <div class="container">
             <div class="footer-top">
-                <div class="footer-logo" data-i18n="footer.logo">Nour Beyond Packaging</div>
+                <div class="footer-logo">Nour Beyond Packaging</div>
                 <div class="footer-info">
                     <p data-i18n="footer.contactLabel">Contact:</p>
                     <p>info@nourpackaging.com</p>

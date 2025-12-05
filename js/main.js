@@ -3,6 +3,58 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     // =========================================
+    // MOBILE MENU TOGGLE
+    // =========================================
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const headerRight = document.getElementById('headerRight');
+    const menuOverlay = document.getElementById('menuOverlay');
+    
+    function openMobileMenu() {
+        mobileMenuBtn.classList.add('active');
+        headerRight.classList.add('active');
+        menuOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    
+    function closeMobileMenu() {
+        mobileMenuBtn.classList.remove('active');
+        headerRight.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', () => {
+            if (headerRight.classList.contains('active')) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        });
+    }
+    
+    if (menuOverlay) {
+        menuOverlay.addEventListener('click', closeMobileMenu);
+    }
+    
+    // Close menu when clicking on nav links
+    const navLinks = document.querySelectorAll('.nav-links a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 1024) {
+                closeMobileMenu();
+            }
+        });
+    });
+    
+    // Close menu on window resize to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 1024) {
+            closeMobileMenu();
+        }
+    });
+
+    // =========================================
     // DARK MODE TOGGLE
     // =========================================
     const darkModeToggle = document.getElementById('darkModeToggle');
