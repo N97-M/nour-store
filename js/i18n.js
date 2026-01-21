@@ -18,14 +18,39 @@ const translations = {
     'about.heading': 'About Nour Beyond Packaging',
     'about.text': "At Nour Beyond Packaging, we merge beauty and functionality in every design. We believe packaging isn't just a look — it's the first experience your customer remembers. From concept to creation, we bring your vision to life with precision and elegance.",
     'services.heading': 'Our Services',
-    'services.card1.title': 'Custom Jar & Bottle Design',
-    'services.card1.desc': 'Unique solutions tailored to product type and visual identity.',
-    'services.card2.title': 'Luxury Box Design & Production',
-    'services.card2.desc': 'From concept to final touch — every detail crafted to perfection.',
-    'services.card3.title': 'Custom Printing Solutions',
-    'services.card3.desc': 'Premium materials and colors that reflect your brand\'s elegance.',
-    'services.card4.title': 'Product Sourcing & Packaging',
-    'services.card4.desc': 'End-to-end management — from idea to delivery.',
+    'services.card1.title': 'Packaging Solutions',
+    'services.card1.desc': 'Comprehensive packaging and wrapping solutions',
+    'services.card2.title': 'Custom Branding Services',
+    'services.card2.desc': 'Customized branding services',
+    'services.card3.title': 'Luxury Packaging',
+    'services.card3.desc': 'Premium luxury packaging',
+    'services.card4.title': 'Cosmetic & Perfume Packaging',
+    'services.card4.desc': 'Perfume and cosmetics packaging',
+    'services.card5.title': 'Gift & Premium Packaging',
+    'services.card5.desc': 'Gift and premium product packaging',
+    'services.card6.title': 'Sustainable Packaging',
+    'services.card6.desc': 'Eco-friendly packaging solutions',
+    'products.heading': 'Product Categories',
+    'products.card1.title': 'Perfume Packaging',
+    'products.card1.desc': 'Premium perfume bottles and packaging',
+    'products.card2.title': 'Cosmetic Containers',
+    'products.card2.desc': 'Jars and containers for cosmetics',
+    'products.card3.title': 'Glass Bottles',
+    'products.card3.desc': 'High-quality glass bottles',
+    'products.card4.title': 'Plastic Bottles',
+    'products.card4.desc': 'Durable plastic containers',
+    'products.card5.title': 'Luxury Boxes',
+    'products.card5.desc': 'Premium packaging boxes',
+    'products.card6.title': 'Fabric Bags',
+    'products.card6.desc': 'Elegant fabric pouches',
+    'products.card7.title': 'Velvet Pouches',
+    'products.card7.desc': 'Soft velvet bags',
+    'products.card8.title': 'Travel Size Containers',
+    'products.card8.desc': 'Compact travel packaging',
+    'products.card9.title': 'Pump Bottles',
+    'products.card9.desc': 'Bottles with pump dispensers',
+    'products.card10.title': 'Airless Bottles',
+    'products.card10.desc': 'Airless pump containers',
     'process.heading': 'How It Works',
     'process.step1.num': '01',
     'process.step1.title': 'Share Your Idea',
@@ -96,14 +121,39 @@ const translations = {
     'about.heading': 'عن Nour Beyond Packaging',
     'about.text': 'في نور بيوند باكيجينج نمزج بين الجمال والوظيفة في كل تصميم. نؤمن أن التغليف ليس مجرد مظهر — بل هو أول تجربة يتذكرها عميلك. من الفكرة إلى التنفيذ، نحقق رؤيتك بدقة وأناقة.',
     'services.heading': 'خدماتنا',
-    'services.card1.title': 'تصميم عبوات وقوارير مخصصة',
-    'services.card1.desc': 'حلول فريدة تناسب نوع المنتج وهويته البصرية.',
-    'services.card2.title': 'تصميم وإنتاج صناديق فاخرة',
-    'services.card2.desc': 'من الفكرة حتى اللمسة الأخيرة — كل التفاصيل مصممة بإتقان.',
-    'services.card3.title': 'حلول طباعة مخصصة',
-    'services.card3.desc': 'خامات وألوان فاخرة تعكس أناقة علامتك.',
-    'services.card4.title': 'توريد وتغليف المنتجات',
-    'services.card4.desc': 'إدارة متكاملة من الفكرة حتى التسليم.',
+    'services.card1.title': 'حلول التعبئة والتغليف',
+    'services.card1.desc': 'حلول التغليف',
+    'services.card2.title': 'خدمات العلامة التجارية المخصصة',
+    'services.card2.desc': 'خدمات العلامات التجارية المخصصة',
+    'services.card3.title': 'التغليف الفاخر',
+    'services.card3.desc': 'التغليف الفاخر',
+    'services.card4.title': 'تغليف العطور ومستحضرات التجميل',
+    'services.card4.desc': 'تغليف مستحضرات التجميل والعطور',
+    'services.card5.title': 'تغليف الهدايا والمنتجات الفاخرة',
+    'services.card5.desc': 'تغليف الهدايا والتغليف المميز',
+    'services.card6.title': 'التغليف الصديق للبيئة',
+    'services.card6.desc': 'التغليف المستدام',
+    'products.heading': 'فئات المنتجات',
+    'products.card1.title': 'تغليف العطور',
+    'products.card1.desc': 'زجاجات وتغليف عطور فاخرة',
+    'products.card2.title': 'عبوات مستحضرات التجميل',
+    'products.card2.desc': 'برطمانات وعبوات مستحضرات التجميل',
+    'products.card3.title': 'زجاجات زجاجية',
+    'products.card3.desc': 'زجاجات زجاجية عالية الجودة',
+    'products.card4.title': 'عبوات بلاستيكية',
+    'products.card4.desc': 'عبوات بلاستيكية متينة',
+    'products.card5.title': 'علب فاخرة',
+    'products.card5.desc': 'صناديق تغليف فاخرة',
+    'products.card6.title': 'أكياس قماشية',
+    'products.card6.desc': 'أكياس قماشية أنيقة',
+    'products.card7.title': 'أكياس مخملية',
+    'products.card7.desc': 'أكياس مخملية ناعمة',
+    'products.card8.title': 'عبوات السفر الصغيرة',
+    'products.card8.desc': 'عبوات سفر مدمجة',
+    'products.card9.title': 'عبوات بمضخة',
+    'products.card9.desc': 'زجاجات مع مضخات توزيع',
+    'products.card10.title': 'عبوات بدون هواء',
+    'products.card10.desc': 'عبوات مضخة محكمة الإغلاق',
     'process.heading': 'كيف نعمل',
     'process.step1.num': '01',
     'process.step1.title': 'شارك فكرتك',
@@ -163,7 +213,7 @@ function setLanguage(lang) {
   document.documentElement.lang = lang;
   document.body.classList.toggle('rtl', lang === 'ar');
   document.body.dir = lang === 'ar' ? 'rtl' : 'ltr';
-  
+
   // Translate text content
   document.querySelectorAll('[data-i18n]').forEach(el => {
     const key = el.getAttribute('data-i18n');
@@ -171,7 +221,7 @@ function setLanguage(lang) {
       el.textContent = translations[lang][key];
     }
   });
-  
+
   // Translate placeholders
   document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
     const key = el.getAttribute('data-i18n-placeholder');
@@ -179,7 +229,7 @@ function setLanguage(lang) {
       el.placeholder = translations[lang][key];
     }
   });
-  
+
   // Translate aria-labels
   document.querySelectorAll('[data-i18n-aria-label]').forEach(el => {
     const key = el.getAttribute('data-i18n-aria-label');
@@ -187,12 +237,12 @@ function setLanguage(lang) {
       el.setAttribute('aria-label', translations[lang][key]);
     }
   });
-  
+
   // Update active button state
   document.querySelectorAll('.lang-btn').forEach(btn => {
     btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
   });
-  
+
   // Save preference
   localStorage.setItem('lang', lang);
 }

@@ -15,20 +15,20 @@
     --soft-orange: #E3B289;
     --white: #FFFFFF;
     --black: #000000;
-    
+
     /* Layout */
     --max-width: 1200px;
     --header-height: 70px;
-    
+
     /* Transitions */
     --transition: all 0.3s ease;
     --transition-fast: all 0.2s ease;
-    
+
     /* Shadows */
     --shadow-sm: 0 2px 8px rgba(30, 42, 58, 0.08);
     --shadow-md: 0 8px 24px rgba(30, 42, 58, 0.12);
     --shadow-lg: 0 16px 48px rgba(30, 42, 58, 0.15);
-    
+
     /* Border Radius */
     --radius-sm: 8px;
     --radius-md: 12px;
@@ -38,7 +38,8 @@
 }
 
 /* Remove any extra space at end of document */
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
@@ -46,7 +47,9 @@ html, body {
 /* ===================================
    RESET & BASE STYLES
    =================================== */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -468,15 +471,23 @@ main {
     position: relative;
 }
 
-.card::before {
-    content: "";
-    position: absolute;
-    top: 1.5rem;
-    left: 2rem;
-    width: 48px;
-    height: 48px;
+.card-icon {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(216, 196, 158, 0.15), rgba(216, 196, 158, 0.05));
     border-radius: 50%;
-    background: radial-gradient(circle at top, rgba(30, 42, 58, 0.12), transparent);
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.card-icon svg {
+    width: 28px;
+    height: 28px;
+    color: var(--gold);
+    transition: var(--transition);
 }
 
 .card:hover {
@@ -484,8 +495,17 @@ main {
     box-shadow: var(--shadow-lg);
 }
 
+.card:hover .card-icon {
+    background: linear-gradient(135deg, var(--gold), #cbb58b);
+    transform: scale(1.1);
+}
+
+.card:hover .card-icon svg {
+    color: var(--navy);
+}
+
 .card h3 {
-    margin-top: 1rem;
+    margin-top: 0;
     font-size: 1.15rem;
     font-family: 'Playfair Display', serif;
     color: var(--navy);
@@ -1115,6 +1135,7 @@ main {
         opacity: 0;
         transform: scale(0.9) translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: scale(1) translateY(0);
@@ -1145,7 +1166,9 @@ main {
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 #loadingSpinner.hide {
@@ -1173,6 +1196,7 @@ main {
         opacity: 0;
         transform: translateX(20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1184,6 +1208,7 @@ main {
         opacity: 0;
         transform: translateX(-20px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1588,7 +1613,7 @@ body.rtl #scrollToTop {
     .mobile-menu-btn {
         display: flex;
     }
-    
+
     .header-right {
         position: fixed;
         top: 0;
@@ -1606,7 +1631,7 @@ body.rtl #scrollToTop {
         z-index: 1000;
         box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
     }
-    
+
     .header-right::before {
         content: '';
         position: absolute;
@@ -1616,11 +1641,11 @@ body.rtl #scrollToTop {
         z-index: 0;
         pointer-events: none;
     }
-    
+
     .header-right.active {
         right: 0;
     }
-    
+
     .nav-links {
         display: flex;
         flex-direction: column;
@@ -1629,18 +1654,18 @@ body.rtl #scrollToTop {
         position: relative;
         z-index: 1;
     }
-    
+
     .nav-links a {
         font-size: 1.1rem;
         padding: 0.5rem 0;
         border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    
+
     .lang-switch {
         position: relative;
         z-index: 1;
     }
-    
+
     .header-right .btn-primary {
         display: inline-flex;
         width: 100%;
@@ -1648,12 +1673,12 @@ body.rtl #scrollToTop {
         position: relative;
         z-index: 1;
     }
-    
+
     /* Body scroll lock when menu is open */
     body.menu-open {
         overflow: hidden;
     }
-    
+
     /* Overlay when menu is open */
     .menu-overlay {
         display: none;
@@ -1662,39 +1687,39 @@ body.rtl #scrollToTop {
         background: rgba(0, 0, 0, 0.5);
         z-index: 999;
     }
-    
+
     .menu-overlay.active {
         display: block;
     }
-    
+
     .hero {
         flex-direction: column;
     }
-    
+
     .hero-content {
         order: 2;
         min-height: auto;
         padding: 3rem 2rem;
     }
-    
+
     .hero-media {
         order: 1;
         min-height: 300px;
     }
-    
+
     .hero-divider {
         display: none;
     }
-    
+
     .hero-copy {
         max-width: 100%;
         text-align: center;
     }
-    
+
     .hero-actions {
         justify-content: center;
     }
-    
+
     body.rtl .header-right {
         right: auto;
         left: -280px;
@@ -1703,33 +1728,33 @@ body.rtl #scrollToTop {
         flex-direction: column;
         align-items: flex-start;
     }
-    
+
     body.rtl .header-right.active {
         left: 0;
         right: auto;
     }
-    
+
     body.rtl .nav-links {
         flex-direction: column;
         width: 100%;
     }
-    
+
     body.rtl .nav-links a {
         text-align: right;
     }
-    
+
     body.rtl .mobile-menu-btn {
         order: -1;
     }
-    
+
     body.rtl .hero {
         flex-direction: column;
     }
-    
+
     body.rtl .hero-copy {
         text-align: center;
     }
-    
+
     body.rtl .hero-actions {
         justify-content: center;
     }
@@ -1739,71 +1764,71 @@ body.rtl #scrollToTop {
     .section {
         padding: 3.5rem 0;
     }
-    
+
     .form-row {
         grid-template-columns: 1fr;
     }
-    
+
     .contact-form {
         padding: 2rem 1.5rem;
     }
-    
+
     .stepper-actions {
         flex-direction: column-reverse;
     }
-    
+
     .stepper-actions .btn {
         width: 100%;
     }
-    
+
     .phone-field {
         flex-direction: column;
     }
-    
+
     .phone-field select {
         border-right: none;
         border-bottom: 1px solid rgba(30, 42, 58, 0.12);
     }
-    
+
     body.rtl .phone-field {
         flex-direction: column;
     }
-    
+
     body.rtl .phone-field select {
         border-left: none;
         border-bottom: 1px solid rgba(30, 42, 58, 0.12);
     }
-    
+
     .footer-top {
         text-align: center;
     }
-    
+
     .footer-links {
         justify-content: center;
     }
-    
+
     body.rtl .footer-top {
         text-align: center;
     }
-    
+
     body.rtl .footer-links {
         justify-content: center;
     }
-    
+
     .fab-group {
         bottom: 1.5rem;
         left: 1.5rem;
     }
-    
+
     #scrollToTop {
         bottom: 1.5rem;
         right: 1.5rem;
     }
-    
+
     body.rtl .fab-group {
         right: 1.5rem;
     }
-    
+
     body.rtl #scrollToTop {
         left: 1.5rem;
     }
@@ -1813,63 +1838,63 @@ body.rtl #scrollToTop {
     .container {
         padding: 0 1rem;
     }
-    
+
     .site-header .container {
         gap: 0.5rem;
     }
-    
+
     .logo {
         font-size: 0.9rem;
     }
-    
+
     .lang-btn {
         padding: 0.25rem 0.5rem;
         font-size: 0.75rem;
     }
-    
+
     .hero h1 {
         font-size: clamp(1.75rem, 6vw, 2.25rem);
     }
-    
+
     .hero-subtitle {
         font-size: 1rem;
     }
-    
+
     .hero-content {
         padding: 2rem 1.5rem;
     }
-    
+
     .section-heading h2 {
         font-size: 1.5rem;
     }
-    
+
     .with-pattern::before {
         width: 80px;
         height: 40px;
         left: -5px;
         top: -8px;
     }
-    
+
     .contact-form {
         padding: 1.5rem 1rem;
     }
-    
+
     .step-connector {
         width: 30px;
         margin: 0 0.25rem;
     }
-    
+
     .step-indicator-inner {
         width: 30px;
         height: 30px;
         font-size: 0.8rem;
     }
-    
+
     .footer-top {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
-    
+
     .service-grid,
     .steps,
     .gallery-grid,
@@ -1882,6 +1907,7 @@ body.rtl #scrollToTop {
    PRINT STYLES
    =================================== */
 @media print {
+
     .site-header,
     .fab-group,
     #scrollToTop,
@@ -1890,11 +1916,11 @@ body.rtl #scrollToTop {
     #loadingSpinner {
         display: none !important;
     }
-    
+
     main {
         padding-top: 0;
     }
-    
+
     .hero {
         min-height: auto;
         page-break-after: always;
