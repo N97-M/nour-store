@@ -561,25 +561,224 @@ main {
 /* ===================================
    GALLERY
    =================================== */
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+.gallery-scroller {
+    display: flex;
+    overflow-x: auto;
     gap: 1.5rem;
+    padding: 3rem 0;
+    /* Space for hover effects */
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    perspective: 1000px;
+    cursor: grab;
+}
+
+.gallery-scroller:active {
+    cursor: grabbing;
+}
+
+.gallery-scroller::-webkit-scrollbar {
+    display: none;
 }
 
 .gallery-item {
+    flex: 0 0 60%;
+    /* Reduced for elegant, smaller cards */
     background: var(--white);
     border-radius: var(--radius-lg);
-    overflow: hidden;
     box-shadow: var(--shadow-md);
-    aspect-ratio: 4/3;
+    scroll-snap-align: start;
+    /* Changed from 'center' to allow first/last items to be reachable */
+    height: 350px;
+    /* Fixed height for consistency */
+    overflow: hidden;
+
+    /* Cinematic Focus & 3D Props */
+    /* Cinematic Focus & 3D Props */
+    transition: transform 0.1s cubic-bezier(0.2, 0, 0.2, 1),
+        /* Ultra smooth tracking */
+        opacity 0.6s ease,
+        filter 0.6s ease,
+        box-shadow 0.4s ease;
+    transform-style: preserve-3d;
+    transform: scale(0.9) rotateY(0deg);
+    opacity: 0.6;
+    filter: blur(2px) grayscale(30%);
+    position: relative;
+    z-index: 1;
+}
+
+.gallery-item.active {
+    transform: scale(1.1);
+    opacity: 1;
+    filter: none;
+    z-index: 10;
+    box-shadow: 0 20px 40px rgba(30, 42, 58, 0.15);
+}
+
+.gallery-item:hover {
+    transform: scale(1.15) translateY(-5px) rotateX(2deg);
+    box-shadow: 0 30px 60px rgba(216, 196, 158, 0.25);
+    z-index: 11;
+}
+
+/* Invisible spacers for first/last item accessibility */
+.gallery-spacer {
+    flex: 0 0 100%;
+    /* Optimized for first item accessibility */
+    min-width: 100%;
+    height: 1px;
+    pointer-events: none;
+    /* Don't interfere with interactions */
+    visibility: hidden;
+    /* Completely invisible */
+}
+
+/* Larger spacer at the end for last item */
+.gallery-spacer-end {
+    flex: 0 0 50%;
+    min-width: 50%;
+}
+
+/* Gallery Lightbox */
+.gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1000px;
+    max-height: 90vh;
+    object-fit: contain;
+    animation: zoomIn 0.3s;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+.close-modal {
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.1);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    color: var(--gold);
+    text-decoration: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
+
+/* Lightbox Navigation */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    -webkit-user-select: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    /* Subtle backdrop */
+    display: none;
+    /* Hidden by default (mobile) */
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 0 3px 3px 0;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: var(--gold);
+}
+
+/* Show arrows only on Desktop */
+@media (min-width: 1024px) {
+
+    .prev,
+    .next {
+        display: block;
+    }
+}
+
+@media (min-width: 768px) {
+    .gallery-item {
+        flex: 0 0 40%;
+        /* Tablet: 2.5 items visible */
+        height: 300px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .gallery-item {
+        flex: 0 0 25%;
+        /* Desktop: 4 items visible */
+        height: 350px;
+    }
 }
 
 .gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Cover for consistent card sizes */
+    object-position: center;
     transition: var(--transition);
+    border-radius: var(--radius-lg);
 }
 
 .gallery-item:hover img {
