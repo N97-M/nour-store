@@ -74,16 +74,7 @@
             </div>
             <div class="hero-divider" aria-hidden="true"></div>
             <div class="hero-media">
-                <!-- Placeholder for hero image -->
-                <div class="hero-placeholder">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                        stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
-                        <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
-                        <circle cx="8.5" cy="8.5" r="1.5"></circle>
-                        <polyline points="21 15 16 10 5 21"></polyline>
-                    </svg>
-                    <span>Hero Image Placeholder</span>
-                </div>
+                <img src="assets/images/hero.jpeg" alt="Nour Beyond Packaging Hero" class="hero-image">
             </div>
         </section>
 
@@ -429,11 +420,12 @@
 
                     <!-- Step 1: Product Information -->
                     <div class="step-section active">
-                        <h3 class="step-title" data-i18n="contact.step1.title">Product Information</h3>
+                        <h3 class="step-title" data-i18n="form.productInfo">Product Information</h3>
                         <div class="section-body">
                             <div class="form-group">
-                                <label for="productType" data-i18n="contact.productType">Product Type</label>
+                                <label for="productType" data-i18n="form.productType">Product Type / Category</label>
                                 <input type="text" id="productType" name="productType"
+                                    data-i18n-placeholder="form.productTypePlaceholder"
                                     placeholder="e.g. Jars, Bottles, Boxes" required>
                             </div>
                         </div>
@@ -441,58 +433,64 @@
 
                     <!-- Step 2: Brand Details -->
                     <div class="step-section">
-                        <h3 class="step-title" data-i18n="contact.step2.title">Brand Details</h3>
+                        <h3 class="step-title" data-i18n="form.brandDetails">Brand Details</h3>
                         <div class="section-body">
                             <div class="form-group">
-                                <label for="brandName" data-i18n="contact.brandName">Brand Name</label>
-                                <input type="text" id="brandName" name="brandName" placeholder="Your Brand" required>
+                                <label for="brandName" data-i18n="form.brandName">Brand Name</label>
+                                <input type="text" id="brandName" name="brandName"
+                                    data-i18n-placeholder="form.brandNamePlaceholder" placeholder="Your Brand" required>
                             </div>
                             <div class="form-group">
-                                <label for="website" data-i18n="contact.website">Website / Instagram</label>
-                                <input type="text" id="website" name="website" placeholder="@yourbrand">
+                                <label for="website" data-i18n="form.website">Website / Instagram</label>
+                                <input type="text" id="website" name="website"
+                                    data-i18n-placeholder="form.websitePlaceholder" placeholder="@yourbrand">
                             </div>
                         </div>
                     </div>
 
                     <!-- Step 3: Budget & Quantity -->
                     <div class="step-section">
-                        <h3 class="step-title" data-i18n="contact.step3.title">Budget &amp; Quantity</h3>
+                        <h3 class="step-title" data-i18n="form.budgetQuantity">Budget &amp; Quantity</h3>
                         <div class="section-body">
                             <div class="form-group">
-                                <label for="quantity" data-i18n="contact.quantity">Estimated Quantity</label>
+                                <label for="quantity" data-i18n="form.quantity">Estimated Quantity</label>
                                 <input type="number" id="quantity" name="quantity" min="100"
+                                    data-i18n-placeholder="form.quantityPlaceholder"
                                     placeholder="Minimum order quantity: 100 units" required>
                             </div>
                             <div class="form-group">
-                                <label for="budget" data-i18n="contact.budget">Budget Range (USD)</label>
+                                <label for="budget" data-i18n="form.budget">Budget Range (USD)</label>
                                 <input type="number" id="budget" name="budget" min="1000"
-                                    placeholder="Minimum budget: $1,000" required>
+                                    data-i18n-placeholder="form.budgetPlaceholder" placeholder="Minimum budget: $1,000"
+                                    required>
                             </div>
                         </div>
                     </div>
 
                     <!-- Step 4: Contact Information -->
                     <div class="step-section">
-                        <h3 class="step-title" data-i18n="contact.step4.title">Contact Information</h3>
+                        <h3 class="step-title" data-i18n="form.contactInformation">Contact Information</h3>
                         <div class="section-body">
                             <div class="form-row">
                                 <div class="form-group">
-                                    <label for="fullName" data-i18n="contact.fullName">Full Name</label>
-                                    <input type="text" id="fullName" name="fullName" placeholder="Enter your full name"
-                                        required>
+                                    <label for="fullName" data-i18n="form.fullName">Full Name</label>
+                                    <input type="text" id="fullName" name="fullName"
+                                        data-i18n-placeholder="form.fullNamePlaceholder"
+                                        placeholder="Enter your full name" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="email" data-i18n="contact.email">Email Address</label>
-                                    <input type="email" id="email" name="email" placeholder="your.email@example.com"
-                                        required>
+                                    <label for="email" data-i18n="form.email">Email Address</label>
+                                    <input type="email" id="email" name="email"
+                                        data-i18n-placeholder="form.emailPlaceholder"
+                                        placeholder="your.email@example.com" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="phone" data-i18n="contact.phone">Phone Number</label>
+                                <label for="phone" data-i18n="form.whatsapp">WhatsApp Number</label>
                                 <div class="phone-field">
                                     <select id="countryCode" name="countryCode">
-                                        <option value="+966" selected>🇸🇦 +966</option>
-                                        <option value="+971">🇦🇪 +971</option>
+                                        <option value="+971" selected>🇦🇪 +971</option>
+                                        <option value="+966">🇸🇦 +966</option>
                                         <option value="+20">🇪🇬 +20</option>
                                         <option value="+962">🇯🇴 +962</option>
                                         <option value="+965">🇰🇼 +965</option>
@@ -502,31 +500,13 @@
                                         <option value="+1">🇺🇸 +1</option>
                                         <option value="+44">🇬🇧 +44</option>
                                     </select>
-                                    <input type="tel" id="phone" name="phone" placeholder="5XXXXXXXX" required>
+                                    <input type="tel" id="phone" name="phone" placeholder="566042734" required>
                                 </div>
                             </div>
                             <div class="form-group">
-                                <label for="logoUpload">Logo / Brand Image (Optional)</label>
-                                <div class="file-upload-wrapper">
-                                    <input type="file" id="logoUpload" name="logoUpload" accept="image/*,.pdf"
-                                        class="file-input">
-                                    <label for="logoUpload" class="file-upload-label">
-                                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
-                                            stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                            stroke-linejoin="round">
-                                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-                                            <polyline points="17 8 12 3 7 8"></polyline>
-                                            <line x1="12" y1="3" x2="12" y2="15"></line>
-                                        </svg>
-                                        <span class="file-upload-text">Click to upload or drag and drop</span>
-                                        <span class="file-upload-hint">PNG, JPG, PDF (Max 5MB)</span>
-                                    </label>
-                                    <span class="file-name"></span>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <label for="message" data-i18n="contact.message">Additional Details</label>
+                                <label for="message" data-i18n="form.message">Additional Details</label>
                                 <textarea id="message" name="message" rows="4"
+                                    data-i18n-placeholder="form.messagePlaceholder"
                                     placeholder="Tell us more about your project requirements..."></textarea>
                             </div>
                         </div>
@@ -535,11 +515,10 @@
                     <!-- Stepper Actions -->
                     <div class="stepper-actions">
                         <button type="button" class="btn btn-outline btn-prev" style="display:none;"
-                            data-i18n="contact.back">Back</button>
-                        <button type="button" class="btn btn-gold btn-next"
-                            data-i18n="contact.continue">Continue</button>
+                            data-i18n="form.back">Back</button>
+                        <button type="button" class="btn btn-gold btn-next" data-i18n="form.continue">Continue</button>
                         <button type="submit" class="btn btn-gold btn-submit" style="display:none;"
-                            data-i18n="contact.submit">Send Inquiry</button>
+                            data-i18n="form.submitButton">Send Inquiry</button>
                     </div>
                 </form>
             </div>
@@ -553,12 +532,20 @@
                 <div class="footer-logo">Nour Beyond Packaging</div>
                 <div class="footer-info">
                     <p data-i18n="footer.contactLabel">Contact:</p>
-                    <p>info@nourpackaging.com</p>
+                    <p>mohvnour@gmail.com</p>
                     <p data-i18n="footer.whatsappLabel">WhatsApp:</p>
-                    <p>+966 5XXXXXXX</p>
+                    <p>+971 566 042 734</p>
                 </div>
                 <div class="footer-links">
-                    <a href="#" aria-label="Instagram" title="Instagram">
+                    <a href="https://www.facebook.com/share/1Bv4JLQyAi/?mibextid=wwXIfr" aria-label="Facebook"
+                        title="Facebook" target="_blank">
+                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/nourbeyondpack?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                        aria-label="Instagram" title="Instagram" target="_blank">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
                             <rect x="2" y="2" width="16" height="16" rx="5"></rect>
@@ -566,17 +553,19 @@
                             <line x1="17.5" y1="6.5" x2="17.5" y2="6.5"></line>
                         </svg>
                     </a>
-                    <a href="#" aria-label="TikTok" title="TikTok">
+                    <a href="https://www.tiktok.com/@nour.beyond.packaging?_r=1&_t=ZS-93GOUehNuFO" aria-label="TikTok"
+                        title="TikTok" target="_blank">
                         <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
                             stroke-linecap="round" stroke-linejoin="round">
                             <path d="M9 17a5 5 0 1 1 0-10V3h3a5 5 0 0 0 5 5v2a7 7 0 1 1-7-7"></path>
                         </svg>
                     </a>
-                    <a href="https://wa.me/9665XXXXXXX" aria-label="WhatsApp" title="WhatsApp">
-                        <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="16" height="16" rx="8"></rect>
-                            <path d="M8 12l2-2 2 2m-2-2V8"></path>
+                    <a href="https://wa.me/971566042734" aria-label="WhatsApp" title="WhatsApp" target="_blank">
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none">
+                            <circle cx="16" cy="16" r="16" fill="#25d366" />
+                            <path
+                                d="M23.5 17.5c-.2-.1-1.2-.6-1.4-.7-.2-.1-.4-.1-.6.1-.2.2-.7.7-.9.9-.2.2-.3.2-.5.1-.2-.1-.8-.3-1.5-1-.6-.6-1-1.3-1.1-1.5-.1-.2 0-.3.1-.5.1-.1.2-.3.3-.4.1-.1.1-.2.2-.3.1-.1.1-.2.1-.3 0-.1 0-.2-.1-.3-.1-.1-.6-1.4-.8-1.9-.2-.5-.4-.4-.6-.4-.2 0-.3 0-.5 0-.2 0-.4 0-.6.2-.2.2-.8.8-.8 2 0 1.2.8 2.3 1.1 2.7.3.4 1.6 2.5 3.9 3.2.5.1.9.2 1.2.1.4-.1 1.2-.5 1.4-1 .2-.5.2-.9.1-1-.1-.1-.2-.1-.4-.2z"
+                                fill="#fff" />
                         </svg>
                     </a>
                 </div>
@@ -600,7 +589,7 @@
 
     <!-- Floating Action Buttons -->
     <div class="fab-group">
-        <a href="https://wa.me/9665XXXXXXX" class="floating-contact" target="_blank" aria-label="WhatsApp Chat">
+        <a href="https://wa.me/971566042734" class="floating-contact" target="_blank" aria-label="WhatsApp Chat">
             <svg viewBox="0 0 32 32" fill="none">
                 <circle cx="16" cy="16" r="16" fill="#25d366"></circle>
                 <path
