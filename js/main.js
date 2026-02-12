@@ -264,6 +264,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // GALLERY CINEMATIC FOCUS
     // =========================================
     const galleryScroller = document.querySelector('.gallery-scroller');
+    const galleryItemsList = document.querySelectorAll('.gallery-item');
+
+    // =========================================
+    // RANDOMIZE GALLERY ORDER
+    // =========================================
+    if (galleryScroller && galleryItemsList.length > 0) {
+        const itemsArray = Array.from(galleryItemsList);
+        for (let i = itemsArray.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [itemsArray[i], itemsArray[j]] = [itemsArray[j], itemsArray[i]];
+        }
+        itemsArray.forEach(item => galleryScroller.appendChild(item));
+    }
+
     const galleryItems = document.querySelectorAll('.gallery-item');
 
     function updateGalleryFocus() {
